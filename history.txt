@@ -1,1 +1,475 @@
+
+laczk@PivZavod MINGW64 ~
+$ git clone https://github.com/cRayleigh/LR6
+Cloning into 'LR6'...
+remote: Enumerating objects: 12, done.
+remote: Total 12 (delta 0), reused 0 (delta 0), pack-reused 12
+Receiving objects: 100% (12/12), done.
+
+laczk@PivZavod MINGW64 ~
+$ cd ./LR6
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git log -a
+commit 921f53b8d0cebf542c791cf31f04e9b792f385a4 (HEAD -> master, origin/master, origin/HEAD)
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:09:49 2020 +0300
+
+    Обновление информации
+
+commit c08a654a63cfc3a7146b2b7015884d9020f5cbf5
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:02:16 2020 +0300
+
+    Файл создан пустым
+
+commit 3c6e9131bb47ed6009c28226afb0535c7f6d5964
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 19:58:20 2020 +0300
+
+    Initial commit
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git log --all
+commit 921f53b8d0cebf542c791cf31f04e9b792f385a4 (HEAD -> master, origin/master, origin/HEAD)
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:09:49 2020 +0300
+
+    Обновление информации
+
+commit 0f9f50db68a6983b47398017545532cd0f992846 (origin/branch1)
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:08:33 2020 +0300
+
+    Заполнил файл
+
+commit c08a654a63cfc3a7146b2b7015884d9020f5cbf5
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:02:16 2020 +0300
+
+    Файл создан пустым
+
+commit 3c6e9131bb47ed6009c28226afb0535c7f6d5964
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 19:58:20 2020 +0300
+
+    Initial commit
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch1
+  remotes/origin/master
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git checkout branch1
+Switched to a new branch 'branch1'
+branch 'branch1' set up to track 'origin/branch1'.
+
+laczk@PivZavod MINGW64 ~/LR6 (branch1)
+$ git pull
+Already up to date.
+
+laczk@PivZavod MINGW64 ~/LR6 (branch1)
+$ git branch -a
+* branch1
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch1
+  remotes/origin/master
+
+laczk@PivZavod MINGW64 ~/LR6 (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git branch -a
+  branch1
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch1
+  remotes/origin/master
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git merge branch1
+Auto-merging mergefile.txt
+CONFLICT (content): Merge conflict in mergefile.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+laczk@PivZavod MINGW64 ~/LR6 (master|MERGING)
+$ git add mergefile.txt
+
+laczk@PivZavod MINGW64 ~/LR6 (master|MERGING)
+$ git commit -m "Branches was Merged"
+[master f6ad8e2] Branches was Merged
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git push https://github.com/cRayleigh/LR6
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 433 bytes | 433.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/cRayleigh/LR6
+   921f53b..f6ad8e2  master -> master
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git branch -a
+  branch1
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch1
+  remotes/origin/master
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git branch -d branch1
+Deleted branch branch1 (was 0f9f50d).
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git push origin -d branch1
+To https://github.com/cRayleigh/LR6
+ - [deleted]         branch1
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ touch "file.txt"
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git add "file.txt"
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git commit -m "File was created"
+[master e909033] File was created
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file.txt
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git log
+commit e909033c1ce7ed1c441b59f9cd9eeb4eb8d784f5 (HEAD -> master)
+Author: 4116 Lacko A.V <laczko90@mail.ru>
+Date:   Fri Nov 4 14:59:59 2022 +0300
+
+    File was created
+
+commit f6ad8e213eddc6b38b9f2117fba65719ee199e69
+Merge: 921f53b 0f9f50d
+Author: 4116 Lacko A.V <laczko90@mail.ru>
+Date:   Fri Nov 4 14:52:19 2022 +0300
+
+    Branches was Merged
+
+commit 921f53b8d0cebf542c791cf31f04e9b792f385a4 (origin/master, origin/HEAD)
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:09:49 2020 +0300
+
+    Обновление информации
+
+commit 0f9f50db68a6983b47398017545532cd0f992846
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:08:33 2020 +0300
+
+    Заполнил файл
+
+commit c08a654a63cfc3a7146b2b7015884d9020f5cbf5
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:02:16 2020 +0300
+
+    Файл создан пустым
+
+commit 3c6e9131bb47ed6009c28226afb0535c7f6d5964
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 19:58:20 2020 +0300
+
+    Initial commit
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git reset --hard HEAD~
+HEAD is now at f6ad8e2 Branches was Merged
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git log
+commit f6ad8e213eddc6b38b9f2117fba65719ee199e69 (HEAD -> master)
+Merge: 921f53b 0f9f50d
+Author: 4116 Lacko A.V <laczko90@mail.ru>
+Date:   Fri Nov 4 14:52:19 2022 +0300
+
+    Branches was Merged
+
+commit 921f53b8d0cebf542c791cf31f04e9b792f385a4 (origin/master, origin/HEAD)
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:09:49 2020 +0300
+
+    Обновление информации
+
+commit 0f9f50db68a6983b47398017545532cd0f992846
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:08:33 2020 +0300
+
+    Заполнил файл
+
+commit c08a654a63cfc3a7146b2b7015884d9020f5cbf5
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:02:16 2020 +0300
+
+    Файл создан пустым
+
+commit 3c6e9131bb47ed6009c28226afb0535c7f6d5964
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 19:58:20 2020 +0300
+
+    Initial commit
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git branch Otchet
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git branch
+  Otchet
+* master
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git checkout otchet
+Switched to branch 'otchet'
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git push https://github.com/cRayleigh/LR6
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'otchet' on GitHub by visiting:
+remote:      https://github.com/cRayleigh/LR6/pull/new/otchet
+remote:
+To https://github.com/cRayleigh/LR6
+ * [new branch]      otchet -> otchet
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git branch -a
+  Otchet
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git branch -a
+  Otchet
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git pull https://github.com/cRayleigh/LR6/tree/master
+fatal: repository 'https://github.com/cRayleigh/LR6/tree/master/' not found
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git pull https://github.com/cRayleigh/LR6
+remote: Enumerating objects: 2, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 683 bytes | 56.00 KiB/s, done.
+From https://github.com/cRayleigh/LR6
+ * branch            HEAD       -> FETCH_HEAD
+Updating f6ad8e2..2c88ee3
+Fast-forward
+ Ranged file | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Ranged file
+
+laczk@PivZavod MINGW64 ~/LR6 (master)
+$ git checkout otchet
+Switched to branch 'otchet'
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git commit -m "Ranged file was pulled"
+On branch otchet
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        photos/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git branch master
+fatal: a branch named 'master' already exists
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git commit -m "Ranged file was pulled"
+On branch otchet
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        photos/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git add ./photos
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git commit -m "Ranged file was pulled"
+[otchet f623d28] Ranged file was pulled
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 photos/1.png
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git log --all
+commit f623d281cea81a7335ca1eb8b4a6a2123f2a432d (HEAD -> otchet)
+Author: 4116 Lacko A.V <laczko90@mail.ru>
+Date:   Fri Nov 4 15:35:45 2022 +0300
+
+    Ranged file was pulled
+
+commit 2c88ee3cd118342de2eaa629136c4c12a5729942 (master)
+Author: cRayleigh <94388642+cRayleigh@users.noreply.github.com>
+Date:   Fri Nov 4 15:26:11 2022 +0300
+
+    Create Ranged file
+
+commit f6ad8e213eddc6b38b9f2117fba65719ee199e69
+Merge: 921f53b 0f9f50d
+Author: 4116 Lacko A.V <laczko90@mail.ru>
+Date:   Fri Nov 4 14:52:19 2022 +0300
+
+    Branches was Merged
+
+commit 921f53b8d0cebf542c791cf31f04e9b792f385a4 (origin/master, origin/HEAD)
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:09:49 2020 +0300
+
+    Обновление информации
+
+commit 0f9f50db68a6983b47398017545532cd0f992846
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:08:33 2020 +0300
+
+    Заполнил файл
+
+commit c08a654a63cfc3a7146b2b7015884d9020f5cbf5
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 20:02:16 2020 +0300
+
+    Файл создан пустым
+
+commit 3c6e9131bb47ed6009c28226afb0535c7f6d5964
+Author: Kurtyanik <45309985+Kurtyanik@users.noreply.github.com>
+Date:   Sat Nov 21 19:58:20 2020 +0300
+
+    Initial commit
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ history 0
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ doskey >history.txt
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ doskey /HISTORY > history.txt
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ doskey /history
 Invalid macro definition.
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ Function Key 7
+bash: Function: command not found
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git push ./photos
+fatal: './photos' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git branch master
+fatal: a branch named 'master' already exists
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        photos/1.png
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git commit -m "Add photos"
+On branch otchet
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   photos/1.png
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git branch -a
+        history.txt
+        photos/2.png
+        photos/3.png
+        photos/4.png
+        photos/5.png
+        photos/6.png
+        photos/7.png
+        photos/8.png
+        photos/9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git add ./photos
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git add history.txt
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git commit -m "Add photos"
+[otchet 28a5233] Add photos
+ 10 files changed, 1 insertion(+)
+ create mode 100644 history.txt
+ create mode 100644 photos/2.png
+ create mode 100644 photos/3.png
+ create mode 100644 photos/4.png
+ create mode 100644 photos/5.png
+ create mode 100644 photos/6.png
+ create mode 100644 photos/7.png
+ create mode 100644 photos/8.png
+ create mode 100644 photos/9.png
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git push https://github.com/cRayleigh/LR6/
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (17/17), 293.56 KiB | 36.69 MiB/s, done.
+Total 17 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/cRayleigh/LR6/
+   f6ad8e2..28a5233  otchet -> otchet
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git add README.md
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git commit -m "README"
+[otchet 2ccba0e] README
+ 1 file changed, 25 insertions(+)
+
+laczk@PivZavod MINGW64 ~/LR6 (otchet)
+$ git push https://github.com/cRayleigh/LR6
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 890 bytes | 890.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/cRayleigh/LR6
+   28a5233..2ccba0e  otchet -> otchet
+
+
